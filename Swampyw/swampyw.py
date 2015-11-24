@@ -38,7 +38,14 @@ class Shrek(object):
         return count
 
     def how_many_times_all_characters(self, word): 
-        pass
+        count = 0
+        character_set = self.json_file['Shrek']['Character Lines']
+        #TODO not have this be n^3...jesus Gabby
+        for val in character_set: 
+            for sentence in character_set[val]: 
+                if word.lower() in sentence.lower(): 
+                    count += 1
+        return count
 
 shrek = Shrek() 
-print shrek.how_many_times_one_character("Shrek", "Donkey")
+print shrek.how_many_times_all_characters("a")
