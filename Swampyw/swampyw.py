@@ -28,6 +28,17 @@ class Shrek(object):
             return self.json_file['Shrek']['Character Lines'][character.upper()][line]
         else: 
             raise ValueError("This is bad error handling. Either the character you've picked isn't in the cinematic classic, Shrek or they don't have that many lines")
+    
+    def how_many_times_one_character(self, character, word): 
+        count = 0 
+        current_character = self.get_character_lines(character.upper())
+        for i in range(len(current_character)): 
+            if word.lower() in current_character[i].lower(): 
+                count += 1
+        return count
+
+    def how_many_times_all_characters(self, word): 
+        pass
 
 shrek = Shrek() 
-print shrek.get_nth_line("Fiona", 10)
+print shrek.how_many_times_one_character("Shrek", "Donkey")
