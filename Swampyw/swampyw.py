@@ -48,4 +48,4 @@ class Shrek(object):
         return count
 
 shrek = Shrek() 
-print shrek.how_many_times_all_characters("a")
+print shrek.get_nth_line("Shrek", 50)
